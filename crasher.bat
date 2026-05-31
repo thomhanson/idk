@@ -11,5 +11,9 @@ if not exist "%~dp0tt.txt" (
 goto dump
 
 :dump
-FOR /F %%i IN ('big_file.txt') DO echo %%i>>tt.txt
+>> tt.txt (
+    for /f "delims=" %%A in (big_file.txt) do (
+        echo %%A
+    )
+)
 goto dump
