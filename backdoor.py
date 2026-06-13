@@ -29,7 +29,7 @@ def install(url: str, filename: str, path: str | None) -> None:
         with open(filename, "w") as f:
             f.write(raw_file.text)
     else:
-        with open(f"{path}\\{filename}") as f:
+        with open(f"{path}\\{filename}", "w") as f:
             f.write(raw_file.text)
 
 if not os.path.exists(f"C:\\Users\\{user}\\commands.txt"):
